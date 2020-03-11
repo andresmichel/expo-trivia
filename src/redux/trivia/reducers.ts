@@ -43,7 +43,7 @@ export default (state: TriviaState = INITIAL_STATE, action): TriviaState => {
             return { ...state, isFetching: true, hasError: false };
 
         case REQUEST_ERROR:
-            return { ...state, hasError: true };
+            return { ...state, isFetching: false, hasError: true };
 
         case NEXT_QUESTION:
             return { ...state, current: state.current + 1 };
