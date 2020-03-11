@@ -27,6 +27,7 @@ const Button = (props: ButtonProps) => {
                 props.onPress();
                 Haptics.selectionAsync();
             }}
+            hitSlop={{ top: 5, left: 20, bottom: 5, right: 20 }}
             disabled={props.disabled}
         >
             <View style={[
