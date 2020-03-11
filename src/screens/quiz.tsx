@@ -83,7 +83,7 @@ const QuizScreen = (props) => {
             show();
         }
         return () => clearTimeout(timeoutId);
-    }, [trivia.current, value]);
+    }, [trivia.current, trivia.hasError, value]);
     if (trivia.isFetching) {
         return (
             <Background style={styles.container}>
