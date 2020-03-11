@@ -91,7 +91,7 @@ const QuizScreen = (props) => {
             </Background>
         );
     }
-    if (trivia.questions.length < 1) {
+    if (trivia.hasError) {
         return (
             <Background style={styles.container}>
                 <Button

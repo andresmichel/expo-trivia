@@ -1,4 +1,11 @@
-import { RECEIVE_QUESTIONS, REQUEST_QUESTIONS, NEXT_QUESTION, SET_ANSWER, RESTART_GAME } from './types';
+import {
+    RECEIVE_QUESTIONS,
+    REQUEST_QUESTIONS,
+    REQUEST_ERROR,
+    NEXT_QUESTION,
+    SET_ANSWER,
+    RESTART_GAME,
+} from './types';
 import { config as triviaConfig } from '../../constants/trivia';
 
 export const fetchQuestions = () => {
@@ -10,7 +17,7 @@ export const fetchQuestions = () => {
             const data = await response.json();
             dispatch({ type: RECEIVE_QUESTIONS, data: data.results });
         } catch (error) {
-            dispatch({ type: RECEIVE_QUESTIONS, data: [] });
+            dispatch({ type: REQUEST_ERROR });
         }
     }
 }

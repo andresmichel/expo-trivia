@@ -1,6 +1,8 @@
+export const RECEIVE_QUESTIONS = 'trivia/RECEIVE_QUESTIONS';
+
 export const REQUEST_QUESTIONS = 'trivia/REQUEST_QUESTIONS';
 
-export const RECEIVE_QUESTIONS = 'trivia/RECEIVE_QUESTIONS';
+export const REQUEST_ERROR = 'trivia/REQUEST_ERROR';
 
 export const NEXT_QUESTION = 'trivia/NEXT_QUESTION';
 
