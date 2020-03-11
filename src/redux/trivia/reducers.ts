@@ -36,11 +36,12 @@ export default (state: TriviaState = INITIAL_STATE, action): TriviaState => {
             return {
                 ...state,
                 isFetching: false,
+                hasError: false,
                 questions: action.data,
             };
 
         case REQUEST_QUESTIONS:
-            return { ...state, isFetching: true, hasError: false };
+            return { ...state, isFetching: true };
 
         case REQUEST_ERROR:
             return { ...state, isFetching: false, hasError: true };

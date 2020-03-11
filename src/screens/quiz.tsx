@@ -73,14 +73,16 @@ const QuizScreen = (props) => {
             }); // Start countdown
             setCard({ c: 0, immediate: false }); // Show Card
         }
-        if (value) {
-            // If value is not null save the current value
-            save(value);
-            // Start leave animations
-            out();
-        } else {
-            // Start enter animations
-            show();
+        if (!trivia.hasError) {
+            if (value) {
+                // If value is not null save the current value
+                save(value);
+                // Start leave animations
+                out();
+            } else {
+                // Start enter animations
+                show();
+            }
         }
         return () => clearTimeout(timeoutId);
     }, [trivia.current, trivia.hasError, value]);
@@ -90,7 +92,7 @@ const QuizScreen = (props) => {
                 <ActivityIndicator size={'large'} color={theme.primaryColor} />
             </Background>
         );
-    } ``
+    }
     if (trivia.hasError) {
         return (
             <Background style={styles.container}>
