@@ -1,0 +1,1 @@
+export const SET_COLOR_SCHEME = 'settings/SET_COLOR_SCHEME';
