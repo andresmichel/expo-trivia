@@ -53,7 +53,7 @@ const ResultsScreen = (props) => {
                     <Button
                         title={'Play again?'}
                         onPress={() => {
-                            dispatch(restartGame());
+                            setTimeout(() => dispatch(restartGame()), 300);
                             props.navigation.navigate('Home');
                         }} />
                 </Background>
