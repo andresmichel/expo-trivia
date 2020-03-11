@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { animated, useSpring } from 'react-spring';
-import { nextQuestion, setAnswer } from '../redux/trivia/actions';
+import { fetchQuestions, nextQuestion, setAnswer } from '../redux/trivia/actions';
 import Background from '../components/background';
 import Button from '../components/button';
 import Card from '../components/card';
@@ -90,13 +90,13 @@ const QuizScreen = (props) => {
                 <ActivityIndicator size={'large'} color={theme.primaryColor} />
             </Background>
         );
-    }
+    } ``
     if (trivia.hasError) {
         return (
             <Background style={styles.container}>
                 <Button
                     title={'Something happen, try again'}
-                    onPress={() => props.navigation.navigate('Home')} />
+                    onPress={() => dispatch(fetchQuestions())} />
             </Background>
         );
     }
