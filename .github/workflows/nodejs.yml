@@ -26,5 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn
     - run: yarn test
+    - run: yarn global add expo-cli
+    - run: expo login -u andresmichel -p L0rem1psum
+    - run: expo publish
       env:
         CI: true
