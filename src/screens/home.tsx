@@ -17,7 +17,8 @@ const HomeScreen = ({ navigation }) => {
     const [animatedScale, setAnimatedScale] = useSpring(() => ({
         scale: 1,
         from: { scale: 0.8 },
-        config: { tension: 500, friction: 5 }
+        config: { tension: 500, friction: 5 },
+        immediate: process.env.NODE_ENV === 'test',
     }));
     useEffect(() => {
         if (trivia.questions.length < 1) dispatch(fetchQuestions());

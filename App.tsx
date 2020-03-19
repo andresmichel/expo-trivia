@@ -38,7 +38,7 @@ const cacheAssetsAsync = () => {
 }
 
 function App() {
-    const [isReady, setIsReady] = useState(false);
+    const [isReady, setIsReady] = useState(process.env.NODE_ENV === 'test');
     if (!isReady) return (
         <AppLoading
             startAsync={async () => { cacheAssetsAsync() }}
